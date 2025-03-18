@@ -1,19 +1,18 @@
 Package: VisualizeSimon2Stage
 Type: Package
 Title: Visualize Simon's Two-Stage Design
-Version: 0.1.6
-Date: 2024-04-30
-Description: To visualize the probabilities of early
-      termination, fail and success of Simon's two-stage
-      design.  To evaluate and visualize the operating
-      characteristics of Simon's two-stage design.
+Version: 0.1.7
+Date: 2025-03-18
+Description: To visualize the probabilities of early termination, fail
+        and success of Simon's two-stage design.  To evaluate and
+        visualize the operating characteristics of Simon's two-stage
+        design.
 License: GPL-2
 Imports: methods
 Encoding: UTF-8
-Authors@R: c(person(given = "Tingting", family = "Zhan",
-      role = c("aut", "cre"), email =
-      "tingtingzhan@gmail.com", comment = c(ORCID =
-      '0000-0001-9971-4844')))
+Authors@R: c(person(given = "Tingting", family = "Zhan", role = c("aut",
+        "cre"), email = "tingtingzhan@gmail.com", comment = c(ORCID =
+        '0000-0001-9971-4844')))
 Language: en-US
 Roxygen: list(markdown = TRUE)
 Depends: R (>= 4.4.0), ggplot2
