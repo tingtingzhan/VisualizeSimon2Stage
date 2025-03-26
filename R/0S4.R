@@ -95,6 +95,7 @@ setClass(Class = 'ph2simon4', slots = c(
 #' Parameters nomenclature of `r1`, `n1`, `r` and `n` follows that of 
 #' PASS and function \link[clinfun]{ph2simon}.
 #' 
+#' @keywords internal
 #' @name simon_pr
 #' @aliases simon_pr-class
 #' @export
@@ -121,6 +122,7 @@ setClass(Class = 'simon_pr', slots = c(
 #' @slot simon_maxResp \link[base]{integer} \link[base]{vector} of same length as \eqn{p}, 
 #' the frequencies of each regime having maximum response and success in Simon's two-stage trial.
 #' 
+#' @keywords internal
 #' @name simon_oc
 #' @aliases simon_oc-class 
 #' @export

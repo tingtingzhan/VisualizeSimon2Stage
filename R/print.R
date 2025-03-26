@@ -15,9 +15,6 @@
 #' @note
 #' We do not overwrite function `clinfun:::print.ph2simon`.
 #' 
-#' @examples
-#' (x = clinfun::ph2simon(pu = .2, pa = .4, ep1 = .05, ep2 = .1)) 
-#' print_ph2simon(x)
 #' @keywords internal
 #' @export
 print_ph2simon <- function(x, ...) {

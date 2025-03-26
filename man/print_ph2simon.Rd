@@ -20,8 +20,4 @@ An alternate \link[base]{print} method for \link[clinfun]{ph2simon} object.
 \note{
 We do not overwrite function \code{clinfun:::print.ph2simon}.
 }
-\examples{
-(x = clinfun::ph2simon(pu = .2, pa = .4, ep1 = .05, ep2 = .1)) 
-print_ph2simon(x)
-}
 \keyword{internal}

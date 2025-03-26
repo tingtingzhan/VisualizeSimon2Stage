@@ -16,5 +16,9 @@ Authors@R: c(person(given = "Tingting", family = "Zhan", role = c("aut",
 Language: en-US
 Roxygen: list(markdown = TRUE)
 Depends: R (>= 4.4.0), ggplot2
-Suggests: clinfun
+Suggests: 
+    clinfun (== 1.1.5),
+    knitr,
+    rmarkdown
 RoxygenNote: 7.3.2
+VignetteBuilder: knitr

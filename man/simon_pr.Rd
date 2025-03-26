@@ -80,8 +80,4 @@ at given true response rate(s) \eqn{p}.}
 \item{\code{prob}}{\link[base]{double} scalar or \link[base]{vector}, true response rate(s) \eqn{p}}
 }}
 
-\examples{
-(x = clinfun::ph2simon(pu = .2, pa = .4, ep1 = .05, ep2 = .1)) 
-simon_pr(prob = c(.2, .3, .4), object = x)
-simon_pr.ph2simon4(prob = c(.2, .3, .4), r1 = 5L, n1 = 24L, r = 13L, n = 45L) # internal use
-}
+\keyword{internal}

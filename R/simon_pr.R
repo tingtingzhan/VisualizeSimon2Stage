@@ -15,10 +15,7 @@
 #' 
 #' Function [simon_pr()] returns \linkS4class{simon_pr} object.
 #' 
-#' @examples
-#' (x = clinfun::ph2simon(pu = .2, pa = .4, ep1 = .05, ep2 = .1)) 
-#' simon_pr(prob = c(.2, .3, .4), object = x)
-#' simon_pr.ph2simon4(prob = c(.2, .3, .4), r1 = 5L, n1 = 24L, r = 13L, n = 45L) # internal use
+#' @keywords internal
 #' @export
 simon_pr <- function(prob, object, ...) UseMethod(generic = 'simon_pr', object = object)
 

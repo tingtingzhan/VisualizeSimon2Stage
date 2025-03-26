@@ -56,7 +56,6 @@ Sprintf.ph2simon <- function(model, ...) model |> ph2simon4(...) |> Sprintf.ph2s
 #' Function [Sprintf.simon_oc()] returns a \link[base]{character} scalar.
 #' 
 #' @keywords internal
-#' @export Sprintf.simon_oc
 #' @export
 Sprintf.simon_oc <- function(model, ...) {
   nm <- names(prob <- model@prob)

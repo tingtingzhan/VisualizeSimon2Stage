@@ -33,8 +33,8 @@ autoplot.ph2simon <- function(object, ...) {
 
 
 
-#' @importFrom ggplot2 autolayer aes geom_bar coord_polar xlim labs
 #' @rdname gg_ph2simon
+#' @importFrom ggplot2 autolayer aes geom_bar coord_polar xlim labs
 #' @export autolayer.ph2simon4
 #' @export
 autolayer.ph2simon4 <- function(

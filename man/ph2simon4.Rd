@@ -50,9 +50,4 @@ i.e., parameter \code{nmax} of function \link[clinfun]{ph2simon}}
 }}
 }}
 
-\examples{
-(x = clinfun::ph2simon(pu = .2, pa = .4, ep1 = .05, ep2 = .1)) 
-ph2simon4(x, type = 'opt')
-ph2simon4(x) # default type = 'minimax'
-}
 \keyword{internal}
