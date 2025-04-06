@@ -11,11 +11,9 @@
 #' @export
 ph2simon4 <- function(object, type = 'minimax', ...) {
   
-  # [print_ph2simon()] uses multiple `type`
-  
   type <- type |>
-    vapply(FUN = match.arg, choices = c('minimax', 'optimal', 'n1', 'maximax'), FUN.VALUE = '') |> 
-    unname()
+    match.arg(choices = c('minimax', 'optimal', 'n1', 'maximax', 'all'))
+  if (type == 'all') type <- c('minimax', 'optimal', 'n1', 'maximax')
   
   x <- object$out # sorted by column 'n'
   # colnames(x)

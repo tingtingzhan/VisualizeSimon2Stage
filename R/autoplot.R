@@ -31,6 +31,16 @@ autoplot.ph2simon <- function(object, ...) {
     )
 }
 
+#' @rdname gg_ph2simon
+#' @export autoplot.ph2simon4
+#' @export
+autoplot.ph2simon4 <- function(object, ...) {
+  ggplot() + autolayer.ph2simon4(object, ...) + 
+    theme_void() +
+    theme(
+      legend.key.spacing.y = unit(.01, units = 'npc')
+    )
+}
 
 
 #' @rdname gg_ph2simon
