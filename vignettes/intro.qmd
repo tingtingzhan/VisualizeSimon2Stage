@@ -247,5 +247,6 @@ set.seed(52); x |> ph2simon4(type = 'optimal') |> simon_oc(prob = p, R = 1e4L)
 or from the design parameters `r1`, `n1`, `r` and `n`. In such case the user must call the `S3` method dispatch `simon_oc.ph2simon4()` explicitly.
 
 ```{r}
+#| fig-width: 5
 set.seed(52); simon_oc.ph2simon4(prob = p, R = 1e4L, r1 = 4L, n1 = 19L, r = 15L, n = 54L)
 ```
