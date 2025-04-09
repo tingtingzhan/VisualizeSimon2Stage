@@ -89,14 +89,14 @@ autolayer.ph2simon4 <- function(
     
     geom_rect(mapping = aes(xmin = xa[-4L], xmax = xa[-1L], ymin = 1, ymax = 1.3), fill = hue, alpha = .15, color = 'white'),
     geom_rect(mapping = aes(xmin = xa[3L], xmax = xa[4L], ymin = 1, ymax = 1.3, fill = 'Success'), alpha = .7, color = 'white'),
-    geom_textpath(mapping = aes(x = (xa[1:2] + xa[2:3])/2, y = 1.2, label = dd[1L, 1:2]), color = hue[1:2]),
+    geom_textpath(mapping = aes(x = (xa[1:2] + xa[2:3])/2, y = 1.2, label = dd[1L, 1:2]), color = hue[1:2], fontface = 2L),
     
     geom_rect(mapping = aes(xmin = xu[-4L], xmax = xu[-1L], ymin = .65, ymax = .95, fill = nm), alpha = .15, color = 'white'),
     geom_rect(mapping = aes(xmin = xu[3L], xmax = xu[4L], ymin = .65, ymax = .95, fill = 'Success'), alpha = .7, color = 'white'),
-    geom_textpath(mapping = aes(x = (xu[1:2] + xu[2:3])/2, y = .85, label = dd[2L, 1:2]), color = hue[1:2]),
+    geom_textpath(mapping = aes(x = (xu[1:2] + xu[2:3])/2, y = .85, label = dd[2L, 1:2]), color = hue[1:2], fontface = 2L),
     
     #geom_textpath(mapping = aes(x = sum(xa[3:4])/2, y = 1.2, label = dd[1L, 3L]), color = 'white'), # geom_textpath error, must be length-(2+). 
-    geom_textpath(mapping = aes(x = c(sum(xa[3:4])/2, sum(xu[3:4])/2), y = c(1.2, .8), label = dd[,3L]), color = 'white'),
+    geom_textpath(mapping = aes(x = c(sum(xa[3:4])/2, sum(xu[3:4])/2), y = c(1.2, .8), label = dd[,3L]), color = 'white', fontface = 2L),
     
     ylim(c(0, 1.5))
     #scale_color_manual(values = col_, name = alliance, guide = 'none')

@@ -161,12 +161,14 @@ simon_pr.ph2simon4(prob = c(.2, .3, .4), r1 = 5L, n1 = 24L, r = 13L, n = 45L) |>
 The S3 generic `ggplot2::autoplot()` visualize the probabilities of early termination, fail and success at $p_u$ and $p_a$. The donut slices for success are colored with the highest opacity, indicating that they represent the Type-I error rate $\alpha$ if $p=p_u$, and the power $1-\beta$ if $p=p_a$. The probabilities are visualized either from an `S3` object `'ph2simon'`,
 
 ```{r}
+#| fig-width: 5
 x |> autoplot(type = 'optimal')
 ```
 
 or from an `S4` object `'ph2simon4'`.
 
 ```{r}
+#| fig-width: 5
 x |> ph2simon4(type = 'optimal') |> autoplot()
 ```
 
@@ -231,12 +233,14 @@ We simulated `1e4L` Simon's two-stage trials of each drug to obtain the **operat
 The operating characteristics are visualized either from an `S3` object `'ph2simon'`,
 
 ```{r}
+#| fig-width: 5
 set.seed(52); x |> simon_oc(prob = p, R = 1e4L, type = 'optimal')
 ```
 
 or from an `S4` object `'ph2simon4'`,
 
 ```{r}
+#| fig-width: 5
 set.seed(52); x |> ph2simon4(type = 'optimal') |> simon_oc(prob = p, R = 1e4L)
 ```
 
