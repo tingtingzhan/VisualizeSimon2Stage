@@ -8,7 +8,7 @@ Description: To visualize the probabilities of early termination, fail
         visualize the operating characteristics of Simon's two-stage
         design.
 License: GPL-2
-Imports: methods, flextable, ggplot2, officer
+Imports: methods, flextable, ggplot2, officer, geomtextpath, scales
 Encoding: UTF-8
 Authors@R: c(person(given = "Tingting", family = "Zhan", role = c("aut",
         "cre"), email = "tingtingzhan@gmail.com", comment = c(ORCID =

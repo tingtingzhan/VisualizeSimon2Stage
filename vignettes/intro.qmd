@@ -18,7 +18,7 @@ vignette: >
 
 # Introduction
 
-This vignette of package **`VisualizeSimon2Stage`** ([CRAN](https://cran.r-project.org/package=VisualizeSimon2Stage), [Github](https://github.com/tingtingzhan/VisualizeSimon2Stage), [RPubs](https://rpubs.com/tingtingzhan/VisualizeSimon2Stage)) documents the visualization of probabilities and operating characteristics of Simon\\'s two-stage Phase II design.
+This vignette of package **`VisualizeSimon2Stage`** ([CRAN](https://cran.r-project.org/package=VisualizeSimon2Stage), [Github](https://github.com/tingtingzhan/VisualizeSimon2Stage), [RPubs](https://rpubs.com/tingtingzhan/VisualizeSimon2Stage)) documents the visualization of probabilities and operating characteristics of Simon's two-stage Phase II design.
 
 ## Note to Users
 
