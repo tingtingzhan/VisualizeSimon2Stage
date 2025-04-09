@@ -42,7 +42,7 @@ autoplot.ph2simon4 <- function(object, ...) {
 
 
 #' @rdname gg_ph2simon
-#' @importFrom ggplot2 autolayer aes geom_bar coord_polar xlim labs
+#' @importFrom ggplot2 autolayer aes geom_rect coord_polar ylim labs
 #' @importFrom geomtextpath geom_textpath
 #' @importFrom scales pal_hue
 #' @export autolayer.ph2simon4
