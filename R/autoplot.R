@@ -12,6 +12,8 @@
 #' 
 #' @param pu,pa \link[base]{double} scalars, see function \link[clinfun]{ph2simon}
 #' 
+#' @param type see slot `@type` of \linkS4class{ph2simon4} object
+#' 
 #' @returns 
 #' Function [autoplot.ph2simon()] returns a \link[ggplot2]{ggplot} object.
 #' 
@@ -51,6 +53,7 @@ autolayer.ph2simon4 <- function(
     object,
     r1 = object@r1, n1 = object@n1, r = object@r, n = object@n,
     pu = object@pu, pa = object@pa,
+    type = object@type,
     ...
 ) {
   
@@ -76,7 +79,7 @@ autolayer.ph2simon4 <- function(
     geom_textpath(mapping = aes(x = c(0, 0, .5), y = c(1.4, .6, 1.4), label = c(
       sprintf(fmt = 'pu=%.0f%%', 1e2*pu),
       sprintf(fmt = 'pa=%.0f%%', 1e2*pa),
-      switch(object@type, minimax = {
+      switch(type, minimax = {
         'Minimum Total Sample Size'
       }, optimal = {
         'Minimum Expected Total Sample Size'
