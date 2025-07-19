@@ -7,15 +7,15 @@ Description: To visualize the probabilities of early termination,
        and visualize the operating characteristics of Simon's
        two-stage design.
 License: GPL-2
-Imports: methods, flextable, ggplot2, officer, geomtextpath,
-       scales
 Encoding: UTF-8
 Authors@R: c(person(given = "Tingting", family = "Zhan", role =
        c("aut", "cre"), email = "tingtingzhan@gmail.com", comment
        = c(ORCID = '0000-0001-9971-4844')))
 Language: en-US
 Roxygen: list(markdown = TRUE)
-Depends: R (>= 4.5.0)
+Depends: R (>= 4.5)
+Imports: methods, flextable, ggplot2, officer, geomtextpath,
+       scales
 Suggests: clinfun, knitr, quarto, rmarkdown
 RoxygenNote: 7.3.2
 VignetteBuilder: quarto
