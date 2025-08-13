@@ -14,7 +14,7 @@ Authors@R: c(person(given = "Tingting", family = "Zhan", role =
 Language: en-US
 Roxygen: list(markdown = TRUE)
 Depends: R (>= 4.5)
-Imports: methods, flextable, ggplot2, officer, geomtextpath,
+Imports: methods, flextable, ggplot2, officer, geomtextpath, ggrepel,
        scales
 Suggests: clinfun, knitr, quarto, rmarkdown
 RoxygenNote: 7.3.2

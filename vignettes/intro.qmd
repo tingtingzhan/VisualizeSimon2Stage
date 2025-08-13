@@ -21,7 +21,7 @@ vignette: >
 
 This vignette of package **`VisualizeSimon2Stage`** ([CRAN](https://cran.r-project.org/package=VisualizeSimon2Stage), [Github](https://github.com/tingtingzhan/VisualizeSimon2Stage), [RPubs](https://rpubs.com/tingtingzhan/VisualizeSimon2Stage)) documents the visualization of probabilities and operating characteristics of Simon's two-stage Phase II design.
 
-## Note to Users
+## Getting Started
 
 Examples in this vignette require that the `search` path has
 
@@ -30,6 +30,12 @@ library(VisualizeSimon2Stage)
 library(clinfun)
 library(flextable)
 library(ggplot2)
+```
+
+```{r}
+#| echo: false
+theme_minimal() |>
+  theme_set()
 ```
 
 # @Simon89 Two-Stage Phase II Design
@@ -212,6 +218,24 @@ set.seed(24); x |>
 #| results: hide
 summary(x)
 summary(x, type = 'all')
+```
+
+
+# Power Curve
+
+```{r}
+#| fig-width: 4
+#| fig-height: 3
+x |> 
+  powerCurve.ph2simon()
+```
+
+```{r}
+#| fig-width: 4
+#| fig-height: 3
+x |> 
+  ph2simon4() |>
+  powerCurve.ph2simon4()
 ```
 
 # Operating Characteristics
