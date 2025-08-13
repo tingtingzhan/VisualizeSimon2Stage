@@ -9,7 +9,7 @@ toc: true
 toc-location: left
 toc-depth: 4
 toc-title: ''
-editor: visual
+editor: source
 bibliography: VisualizeSimon2Stage.bib
 vignette: >
   %\VignetteIndexEntry{intro}
@@ -26,18 +26,17 @@ This vignette of package **`VisualizeSimon2Stage`** ([CRAN](https://cran.r-proje
 Examples in this vignette require that the `search` path has
 
 ```{r}
-#| message: false
 library(VisualizeSimon2Stage)
 library(clinfun)
 library(flextable)
 library(ggplot2)
 ```
 
-# Simon's Two-Stage Phase II Design
+# @Simon89 Two-Stage Phase II Design
 
 ## Notations
 
-Simon's two-stage design [@Simon89] tests the one-sided hypothesis $H_0: p\leq p_u$ vs. $H_a: p>p_u$ for a binary response in the following steps.
+@Simon89 two-stage design tests the one-sided hypothesis $H_0: p\leq p_u$ vs. $H_a: p>p_u$ for a binary response in the following steps.
 
 1.  Enroll $n_1$ subjects.
 
@@ -137,21 +136,24 @@ simon_pr.ph2simon4(prob = c(.2, .3, .4), r1 = 5L, n1 = 24L, r = 13L, n = 45L) |>
 S3 methods dispatches for the generic `ggplot2::autoplot()` visualize the probabilities of early termination, fail and success at $p=p_u$ and $p=p_a$. The donut slices for success are colored with the highest opacity, indicating that they represent the Type-I error rate $\alpha$ if $p=p_u$, and the power $1-\beta$ if $p=p_a$. The probabilities are visualized either from an `S3` object `'ph2simon'`,
 
 ```{r}
-#| fig-width: 5
+#| fig-width: 4
+#| fig-height: 4
 x |> autoplot(type = 'optimal')
 ```
 
 or from an `S4` object `'ph2simon4'`.
 
 ```{r}
-#| fig-width: 5
+#| fig-width: 4
+#| fig-height: 4
 x |> ph2simon4(type = 'optimal') |> autoplot()
 ```
 
 or from the design parameters $(r_1, n_1, r, n)$ and `type`. In such case the user must call the `S3` method dispatch `autoplot.ph2simon4()` explicitly.
 
 ```{r}
-#| fig-width: 5
+#| fig-width: 4
+#| fig-height: 4
 autoplot.ph2simon4(pu = .2, pa = .4, r1 = 4L, n1 = 19L, r = 15L, n = 54L, type = 'optimal')
 ```
 
@@ -177,24 +179,31 @@ set.seed(15); s2 = r_simon.ph2simon4(R = 1e4L, prob = .3, r1 = 4L, n1 = 19L, r =
 stopifnot(identical(s, s2))
 ```
 
-Obviously, at a sufficiently large simulated sample size, the Type-I error rate is controlled at $\alpha<5\%$ when $p=p_u=.2$,
+The Type-I error rate is controlled at $\alpha\leq 5\%$ when $p=p_u=.2$ at a sufficiently large simulated sample size.  The Type-II error rate is controlled at $\beta\leq 10\%$, or power $(1-\beta)\geq 90\%$, when $p=p_a=.4$.
+
 
 ```{r}
+#| code-fold: true
+#| code-summary: 'R code: Type-I-error rate at $p_u$, `1e4L` simulated copies'
 set.seed(31); x |> 
   r_simon(R = 1e4L, prob = .2) |> 
   attr(which = 'dx', exact = TRUE) |> 
+  table(Decision = _) |>
   as_flextable() |> 
-  set_caption(caption = 'pu = .2')
+  highlight(i = 3L, j = 3L) |>
+  add_header_lines(values = 'pu = .2')
 ```
 
-and the Type-II error rate is controlled at $\beta<10\%$, or power $(1-\beta)>90\%$, when $p=p_a=.4$.
-
 ```{r}
+#| code-fold: true
+#| code-summary: 'R code: power at $p_a$, `1e4L` simulated copies'
 set.seed(24); x |> 
   r_simon(R = 1e4L, prob = .4) |>
   attr(which = 'dx', exact = TRUE) |>
+  table(Decision = _) |>
   as_flextable() |> 
-  set_caption(caption = 'pa = .4')
+  highlight(i = 3L, j = 3L) |>
+  add_header_lines(values = 'pa = .4')
 ```
 
 ```{r}
@@ -213,7 +222,7 @@ Suppose we have three drugs $A$, $B$ and $C$, with true response rate $p^A=.3$, 
 p = c(A = .3, B = .2, C = .15)
 ```
 
-We simulated `1e4L` Simon's two-stage trials of each drug to obtain the **operating characteristics**, i.e., the percentage of trials in which each drug
+We simulated `1e4L` Simon's two-stage trials of each drug to obtain the operating characteristics, i.e., the percentage of trials in which each drug
 
 -   having the highest number of responses
 -   both having the highest number of responses *and* successfully rejecting the null hypothesis.
@@ -221,27 +230,30 @@ We simulated `1e4L` Simon's two-stage trials of each drug to obtain the **operat
 The operating characteristics are visualized either from an `S3` object `'ph2simon'`,
 
 ```{r}
-#| fig-width: 5
+#| fig-width: 4
+#| fig-height: 4
 set.seed(52); x |> simon_oc(prob = p, R = 1e4L, type = 'optimal')
 ```
 
 or from an `S4` object `'ph2simon4'`,
 
 ```{r}
-#| fig-width: 5
+#| fig-width: 4
+#| fig-height: 4
 set.seed(52); x |> ph2simon4(type = 'optimal') |> simon_oc(prob = p, R = 1e4L)
 ```
 
 or from the design parameters $(r_1, n_1, r, n)$. In such case the user must call the `S3` method dispatch `simon_oc.ph2simon4()` explicitly.
 
 ```{r}
-#| fig-width: 5
+#| fig-width: 4
+#| fig-height: 4
 set.seed(52); simon_oc.ph2simon4(prob = p, R = 1e4L, r1 = 4L, n1 = 19L, r = 15L, n = 54L)
 ```
 
 # Appendix
 
-## Terms and Abbreviations
+## Terms & Abbreviations
 
 | Term / Abbreviation | Description |
 |------------------------------------|------------------------------------|
@@ -253,7 +265,7 @@ set.seed(52); simon_oc.ph2simon4(prob = p, R = 1e4L, r1 = 4L, n1 = 19L, r = 15L,
 | [`flextable`](https://search.r-project.org/CRAN/refmans/flextable/html/flextable.html) | Flexible tables, from package **`flextable`** [@flextable] |
 | `PASS` | Power Analysis & Sample Size, <https://www.ncss.com/software/pass/> |
 | `PET` | Probability of early termination |
-| [`ph2simon`](https://search.r-project.org/CRAN/refmans/clinfun/html/ph2simon.html) | Simon's 2-stage Phase II design, from package **`clinfun`** [@clinfun] |
+| [`ph2simon`](https://search.r-project.org/CRAN/refmans/clinfun/html/ph2simon.html) | @Simon89 two-stage Phase II design, from package **`clinfun`** [@clinfun] |
 | `S3`, `generic`, [`methods`](https://search.r-project.org/R/refmans/utils/html/methods.html) | `S3` object oriented system, [`UseMethod`](https://search.r-project.org/R/refmans/base/html/UseMethod.html); [`getS3method`](https://search.r-project.org/R/refmans/utils/html/getS3method.html); <https://adv-r.hadley.nz/s3.html> |
 | `S4`, `generic`, `methods` | `S4` object oriented system, [`isS4`](https://search.r-project.org/R/refmans/base/html/isS4.html); [`setClass`](https://search.r-project.org/R/refmans/methods/html/setClass.html); [`getMethod`](https://search.r-project.org/R/refmans/methods/html/getMethod.html); <https://adv-r.hadley.nz/s4.html> |
 | [`search`](https://search.r-project.org/R/refmans/base/html/search.html) | Search path |
