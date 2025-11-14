@@ -285,7 +285,7 @@ set.seed(52); simon_oc.ph2simon4(prob = p, R = 1e4L, r1 = 4L, n1 = 19L, r = 15L,
 
 # Appendix
 
-## Terms & Abbreviations
+# Terms & Abbreviations
 
 | Term / Abbreviation | Description |
 |------------------------------------|------------------------------------|
