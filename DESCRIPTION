@@ -16,6 +16,6 @@ Roxygen: list(markdown = TRUE)
 Depends: R (>= 4.5)
 Imports: methods, flextable, ggplot2, officer, geomtextpath, ggrepel,
        scales
-Suggests: clinfun, knitr, quarto, rmarkdown
+Suggests: clinfun
 RoxygenNote: 7.3.3
-VignetteBuilder: quarto
+
