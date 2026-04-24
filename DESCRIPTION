@@ -1,7 +1,7 @@
 Package: VisualizeSimon2Stage
 Type: Package
 Title: Visualize Simon's Two-Stage Design
-Version: 0.2.3
+Version: 0.2.3.20260424
 Description: To visualize the probabilities of early termination,
        fail and success of Simon's two-stage design.  To evaluate
        and visualize the operating characteristics of Simon's
@@ -13,9 +13,9 @@ Authors@R: c(person(given = "Tingting", family = "Zhan", role =
        = c(ORCID = '0000-0001-9971-4844')))
 Language: en-US
 Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.3.3
 Depends: R (>= 4.5)
 Imports: methods, flextable, ggplot2, officer, geomtextpath, ggrepel,
        scales
 Suggests: clinfun
-RoxygenNote: 7.3.3
 
