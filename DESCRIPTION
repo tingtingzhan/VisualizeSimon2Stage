@@ -2,7 +2,7 @@ Package: VisualizeSimon2Stage
 Type: Package
 Title: Visualize Simon's Two-Stage Design
 Version: 0.2.3
-Date: 2026-05-04
+Date: 2026-06-02
 Description: To visualize the probabilities of early termination,
        fail and success of Simon's two-stage design.  To evaluate
        and visualize the operating characteristics of Simon's
