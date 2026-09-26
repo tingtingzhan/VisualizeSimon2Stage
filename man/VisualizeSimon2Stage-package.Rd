@@ -8,9 +8,6 @@
 \description{
 To visualize the probabilities of early termination, fail and success of Simon's two-stage design. To evaluate and visualize the operating characteristics of Simon's two-stage design.
 }
-\references{
-\url{https://rpubs.com/tingtingzhan/VisualizeSimon2Stage}
-}
 \seealso{
 Useful links:
 \itemize{
@@ -19,11 +16,11 @@ Useful links:
 
 }
 \author{
-\strong{Maintainer}: Tingting Zhan \email{tingtingzhan@gmail.com} (\href{https://orcid.org/0000-0001-9971-4844}{ORCID})
+\strong{Maintainer}: Tingting Zhan \email{tingtingzhan@gmail.com}
 
 Authors:
 \itemize{
-  \item Tingting Zhan \email{tingtingzhan@gmail.com} (\href{https://orcid.org/0000-0001-9971-4844}{ORCID})
+  \item Tingting Zhan \email{tingtingzhan@gmail.com}
 }
 
 }
