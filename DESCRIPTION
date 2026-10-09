@@ -1,8 +1,8 @@
 Package: VisualizeSimon2Stage
 Type: Package
 Title: Visualize Simon's Two-Stage Design
-Version: 0.2.3
-Date: 2026-09-26
+Version: 0.2.3.1
+Date: 2026-10-09
 Description: To visualize the probabilities of early termination, fail and success of Simon's two-stage design.  To evaluate and visualize the operating characteristics of Simon's two-stage design.
 License: GPL-2
 Encoding: UTF-8
@@ -13,5 +13,5 @@ Depends: R (>= 4.6)
 Imports: methods, flextable, ggplot2, officer, geomtextpath, ggrepel, scales
 Suggests: clinfun, knitr, quarto, rmarkdown
 VignetteBuilder: quarto
-Config/roxygen2/version: 8.1.0
+Config/roxygen2/version: 8.1.1
 Config/roxygen2/markdown: TRUE
