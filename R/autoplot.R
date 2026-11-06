@@ -21,20 +21,18 @@
 #' 
 #' @keywords internal
 #' @name gg_ph2simon
-#' @importFrom ggplot2 autoplot
-#' @export autoplot.ph2simon
-#' @export
-autoplot.ph2simon <- function(object, ...) {
+#' @exportS3Method ggplot2::autoplot
+autoplot.ph2simon <- \(object, ...) {
   object |> 
     ph2simon4(...) |>
     autoplot.ph2simon4()
 }
 
 #' @rdname gg_ph2simon
-#' @importFrom ggplot2 autoplot ggplot theme_void
+#' @importFrom ggplot2 ggplot theme_void
 #' @export autoplot.ph2simon4
-#' @export
-autoplot.ph2simon4 <- function(object, ...) {
+#' @exportS3Method ggplot2::autoplot
+autoplot.ph2simon4 <- \(object, ...) {
   ggplot() + autolayer.ph2simon4(object, ...) + 
     coord_polar(theta = 'x') +
     theme_void()
@@ -42,12 +40,11 @@ autoplot.ph2simon4 <- function(object, ...) {
 
 
 #' @rdname gg_ph2simon
-#' @importFrom ggplot2 autolayer aes geom_rect coord_polar ylim
+#' @importFrom ggplot2 aes geom_rect coord_polar ylim
 #' @importFrom geomtextpath geom_textpath
 #' @importFrom scales pal_hue
-#' @export autolayer.ph2simon4
-#' @export
-autolayer.ph2simon4 <- function(
+#' @exportS3Method ggplot2::autolayer
+autolayer.ph2simon4 <- \(
     object,
     r1 = object@r1, n1 = object@n1, r = object@r, n = object@n,
     pu = object@pu, pa = object@pa,
@@ -125,7 +122,6 @@ autolayer.ph2simon4 <- function(
 
 
 #' @rdname gg_ph2simon
-#' @export autolayer.ph2simon
-#' @export
-autolayer.ph2simon <- function(object, ...) object |> ph2simon4(...) |> autolayer.ph2simon4()
+#' @exportS3Method ggplot2::autolayer
+autolayer.ph2simon <- \(object, ...) object |> ph2simon4(...) |> autolayer.ph2simon4()
 

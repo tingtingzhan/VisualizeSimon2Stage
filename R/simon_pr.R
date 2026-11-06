@@ -17,13 +17,13 @@
 #' 
 #' @keywords internal
 #' @export
-simon_pr <- function(prob, object, ...) UseMethod(generic = 'simon_pr', object = object)
+simon_pr <- \(prob, object, ...) UseMethod(generic = 'simon_pr', object = object)
 
 
 #' @rdname simon_pr
 #' @export simon_pr.ph2simon
 #' @export
-simon_pr.ph2simon <- function(prob, object, ...) {
+simon_pr.ph2simon <- \(prob, object, ...) {
   object |>
     ph2simon4(...) |>
     simon_pr.ph2simon4(prob = prob)
@@ -34,7 +34,7 @@ simon_pr.ph2simon <- function(prob, object, ...) {
 #' @importFrom stats dbinom pbinom
 #' @export simon_pr.ph2simon4
 #' @export
-simon_pr.ph2simon4 <- function(
+simon_pr.ph2simon4 <- \(
     prob, 
     object,
     r1 = object@r1, n1 = object@n1, r = object@r, n = object@n,
@@ -77,7 +77,7 @@ simon_pr.ph2simon4 <- function(
 
 
 #' @export
-`[.simon_pr` <- function(x, i) {
+`[.simon_pr` <- \(x, i) {
   x@frail <- x@frail[i]
   x@reject <- x@reject[i]
   x@eN <- x@eN[i]
@@ -101,7 +101,7 @@ simon_pr.ph2simon4 <- function(
 #' @importFrom flextable as_flextable flextable autofit add_header_row align vline
 #' @export as_flextable.simon_pr
 #' @export
-as_flextable.simon_pr <- function(x, ...) {
+as_flextable.simon_pr <- \(x, ...) {
   p <- cbind(
     'Early Termination' = x@frail, 
     'Fail' = 1-x@frail-x@reject, 
@@ -131,9 +131,9 @@ as_flextable.simon_pr <- function(x, ...) {
 
 
 
-#' @importFrom ggplot2 autolayer aes geom_rect coord_polar labs
-#' @export
-autolayer.simon_pr <- function(object, ...) {
+#' @importFrom ggplot2 aes geom_rect coord_polar labs
+#' @exportS3Method ggplot2::autolayer
+autolayer.simon_pr <- \(object, ...) {
   object <- object[1L] # `[.simon_pr`
   x <- c(object@frail, 1-object@frail-object@reject, object@reject)
   nm <- paste(c('Early Termination', 'Fail', 'Success'), sprintf(fmt = '%.1f%%', 1e2*x))
@@ -147,9 +147,9 @@ autolayer.simon_pr <- function(object, ...) {
 }
 
 
-#' @importFrom ggplot2 autoplot ggplot theme_void
-#' @export
-autoplot.simon_pr <- function(object, ...) {
+#' @importFrom ggplot2 ggplot theme_void
+#' @exportS3Method ggplot2::autoplot
+autoplot.simon_pr <- \(object, ...) {
   ggplot() + autolayer.simon_pr(object, ...) + theme_void()
 }
 

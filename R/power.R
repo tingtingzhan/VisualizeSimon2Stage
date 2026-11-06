@@ -12,7 +12,7 @@
 #' 
 #' @name power_ph2simon
 #' @export
-power.ph2simon4 <- function(
+power.ph2simon4 <- \(
     prob, 
     object, ...,
     r1 = object@r1, n1 = object@n1, r = object@r, n = object@n
@@ -32,7 +32,7 @@ power.ph2simon4 <- function(
 
 #' @rdname power_ph2simon
 #' @export
-power.ph2simon <- function(prob, object, ...) {
+power.ph2simon <- \(prob, object, ...) {
   object |> 
     ph2simon4(...) |> 
     power.ph2simon4(prob = prob, object = _)
@@ -44,7 +44,7 @@ power.ph2simon <- function(prob, object, ...) {
 #' @importFrom ggrepel geom_label_repel
 #' @importFrom scales pal_hue label_percent
 #' @export
-powerCurve.ph2simon4 <- function(object, ...) {
+powerCurve.ph2simon4 <- \(object, ...) {
   
   p <- c(object@pu, object@pa)
   pwr <- power.ph2simon4(prob = p, object = object)
@@ -69,7 +69,7 @@ powerCurve.ph2simon4 <- function(object, ...) {
 
 #' @rdname power_ph2simon
 #' @export
-powerCurve.ph2simon <- function(object, ...) {
+powerCurve.ph2simon <- \(object, ...) {
   object |> 
     ph2simon4(...) |> 
     powerCurve.ph2simon4()

@@ -16,7 +16,7 @@
 #' @name show_simon
 #' @aliases show,simon_oc-method
 #' @export
-setMethod(f = show, signature = 'simon_oc', definition = function(object) {
+setMethod(f = show, signature = 'simon_oc', definition = \(object) {
   object |> autoplot.simon_oc() |> print()
 })
 
@@ -25,7 +25,7 @@ setMethod(f = show, signature = 'simon_oc', definition = function(object) {
 #' @rdname show_simon
 #' @aliases show,simon_pr-method
 #' @export
-setMethod(f = show, signature = 'simon_pr', definition = function(object) {
+setMethod(f = show, signature = 'simon_pr', definition = \(object) {
   object |> 
     as_flextable.simon_pr() |> 
     print()
@@ -37,7 +37,7 @@ setMethod(f = show, signature = 'simon_pr', definition = function(object) {
 #' @rdname show_simon
 #' @aliases show,ph2simon4-method
 #' @export
-setMethod(f = show, signature = 'ph2simon4', definition = function(object) {
+setMethod(f = show, signature = 'ph2simon4', definition = \(object) {
   
   out <- object |> summary.ph2simon4()
   out$EN[] <- sprintf(fmt = '%.1f', out$EN)

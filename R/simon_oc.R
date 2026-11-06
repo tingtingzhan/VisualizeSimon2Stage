@@ -25,18 +25,18 @@
 #' 
 #' @keywords internal
 #' @export
-simon_oc <- function(prob, R, object, ...) UseMethod(generic = 'simon_oc', object = object)
+simon_oc <- \(prob, R, object, ...) UseMethod(generic = 'simon_oc', object = object)
 
 #' @rdname simon_oc
 #' @export simon_oc.ph2simon
 #' @export
-simon_oc.ph2simon <- function(prob, R = 1e4L, object, ...) object |> ph2simon4(...) |> simon_oc.ph2simon4(prob = prob, R = R)
+simon_oc.ph2simon <- \(prob, R = 1e4L, object, ...) object |> ph2simon4(...) |> simon_oc.ph2simon4(prob = prob, R = R)
     
     
 #' @rdname simon_oc
 #' @export simon_oc.ph2simon4
 #' @export
-simon_oc.ph2simon4 <- function(
+simon_oc.ph2simon4 <- \(
     prob, 
     R = 1e4L,
     object, ...,
@@ -78,9 +78,9 @@ simon_oc.ph2simon4 <- function(
 
 
 
-#' @importFrom ggplot2 autolayer aes geom_rect coord_polar labs
-#' @export
-autolayer.simon_oc <- function(object, ...) {
+#' @importFrom ggplot2 aes geom_rect coord_polar labs
+#' @exportS3Method ggplot2::autolayer
+autolayer.simon_oc <- \(object, ...) {
   pn <- length(prob <- object@prob)
   R <- sum(object@maxResp)
   maxResp <- object@maxResp / R
@@ -113,10 +113,10 @@ autolayer.simon_oc <- function(object, ...) {
 
 
 
-#' @importFrom ggplot2 autoplot ggplot theme theme_void
+#' @importFrom ggplot2 ggplot theme theme_void
 #' @importFrom grid unit
-#' @export
-autoplot.simon_oc <- function(object, ...) {
+#' @exportS3Method ggplot2::autoplot
+autoplot.simon_oc <- \(object, ...) {
   ggplot() + autolayer.simon_oc(object, ...) + 
     coord_polar(theta = 'x') +
     theme_void() +

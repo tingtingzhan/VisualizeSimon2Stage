@@ -9,7 +9,7 @@
 #' 
 #' @keywords internal
 #' @export
-ph2simon4 <- function(object, type = 'minimax', ...) {
+ph2simon4 <- \(object, type = 'minimax', ...) {
   
   type <- type |>
     match.arg(choices = c('minimax', 'optimal', 'n1', 'maximax', 'all'))

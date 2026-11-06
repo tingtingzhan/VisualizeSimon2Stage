@@ -2,14 +2,14 @@
 
 S3method("[",simon_pr)
 S3method(as_flextable,simon_pr)
-S3method(autolayer,ph2simon)
-S3method(autolayer,ph2simon4)
-S3method(autolayer,simon_oc)
-S3method(autolayer,simon_pr)
-S3method(autoplot,ph2simon)
-S3method(autoplot,ph2simon4)
-S3method(autoplot,simon_oc)
-S3method(autoplot,simon_pr)
+S3method(ggplot2::autolayer,ph2simon)
+S3method(ggplot2::autolayer,ph2simon4)
+S3method(ggplot2::autolayer,simon_oc)
+S3method(ggplot2::autolayer,simon_pr)
+S3method(ggplot2::autoplot,ph2simon)
+S3method(ggplot2::autoplot,ph2simon4)
+S3method(ggplot2::autoplot,simon_oc)
+S3method(ggplot2::autoplot,simon_pr)
 S3method(r_simon,ph2simon)
 S3method(r_simon,ph2simon4)
 S3method(simon_oc,ph2simon)
@@ -23,9 +23,6 @@ export(Sprintf.ph2simon)
 export(Sprintf.ph2simon4)
 export(Sprintf.simon_oc)
 export(as_flextable.simon_pr)
-export(autolayer.ph2simon)
-export(autolayer.ph2simon4)
-export(autoplot.ph2simon)
 export(autoplot.ph2simon4)
 export(ph2simon4)
 export(power.ph2simon)
@@ -59,8 +56,6 @@ importFrom(flextable,
 importFrom(geomtextpath,geom_textpath)
 importFrom(ggplot2,
   aes,
-  autolayer,
-  autoplot,
   coord_polar,
   geom_point,
   geom_rect,

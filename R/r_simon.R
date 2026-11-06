@@ -35,18 +35,18 @@
 #' @keywords internal
 #' @name r_simon
 #' @export
-r_simon <- function(R, prob, object, ...) UseMethod(generic = 'r_simon', object = object)
+r_simon <- \(R, prob, object, ...) UseMethod(generic = 'r_simon', object = object)
 
 #' @rdname r_simon
 #' @export r_simon.ph2simon
 #' @export
-r_simon.ph2simon <- function(R, prob, object, ...) object |> ph2simon4(...) |> r_simon.ph2simon4(R = R, prob = prob)
+r_simon.ph2simon <- \(R, prob, object, ...) object |> ph2simon4(...) |> r_simon.ph2simon4(R = R, prob = prob)
   
 #' @rdname r_simon
 #' @importFrom stats rbinom
 #' @export r_simon.ph2simon4
 #' @export
-r_simon.ph2simon4 <- function(
+r_simon.ph2simon4 <- \(
     R, prob, 
     object, ...,
     r1 = object@r1, n1 = object@n1, r = object@r, n = object@n

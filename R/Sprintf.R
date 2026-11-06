@@ -13,7 +13,7 @@
 #' @keywords internal
 #' @name Sprintf_ph2simon
 #' @export
-Sprintf.ph2simon4 <- function(model, ...) {
+Sprintf.ph2simon4 <- \(model, ...) {
   
   r1 <- model@r1
   if (length(r1) != 1L || !is.integer(r1) || is.na(r1) || r1 < 0L) stop('`r1` must be non-negative integer scalar')
@@ -40,7 +40,7 @@ Sprintf.ph2simon4 <- function(model, ...) {
 
 #' @rdname Sprintf_ph2simon
 #' @export
-Sprintf.ph2simon <- function(model, ...) model |> ph2simon4(...) |> Sprintf.ph2simon4()
+Sprintf.ph2simon <- \(model, ...) model |> ph2simon4(...) |> Sprintf.ph2simon4()
 
 
 
@@ -63,7 +63,7 @@ Sprintf.ph2simon <- function(model, ...) model |> ph2simon4(...) |> Sprintf.ph2s
 #' @keywords internal
 #' @importFrom scales label_percent
 #' @export
-Sprintf.simon_oc <- function(model, ...) {
+Sprintf.simon_oc <- \(model, ...) {
   nm <- names(prob <- model@prob)
   N <- sum(model@maxResp)
   sprintf(

@@ -20,7 +20,7 @@
 #' @name summary_ph2simon
 #' @export summary.ph2simon4
 #' @export
-summary.ph2simon4 <- function(object, ...) {
+summary.ph2simon4 <- \(object, ...) {
   
   atr <- attributes(object)[c('r1', 'n1', 'r', 'n')]
   
@@ -56,7 +56,7 @@ summary.ph2simon4 <- function(object, ...) {
 #' @rdname summary_ph2simon
 #' @export summary.ph2simon
 #' @export
-summary.ph2simon <- function(object, ...) {
+summary.ph2simon <- \(object, ...) {
   object |> 
     ph2simon4(...) |>
     summary.ph2simon4()
